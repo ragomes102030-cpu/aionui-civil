@@ -32,6 +32,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # GitHub Pages project sites are served from /<repo>/ — keep asset URLs in sync
+          # with the repository name if you rename it or attach a custom domain.
+          VITE_BASE: /aionui-civil/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
